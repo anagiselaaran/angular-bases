@@ -1,13 +1,28 @@
+import { HeroComponent } from './heros/hero/hero.component';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { MiPrimerComponentComponent } from './components/mi-primer-component/mi-primer-component.component';
+import { ListComponent } from './heros/list/list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,MiPrimerComponentComponent,HeroComponent,ListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'miPrimeraApp';
+
+  public title: string = 'mi Primera App';
+  public contador: number = 5;
+
+  aumentar(value:number) {
+    this.contador += value
+  }
+  
+  reset() {
+    this.contador = 10
+  }
+  
+  
 }

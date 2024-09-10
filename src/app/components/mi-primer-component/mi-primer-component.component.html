@@ -1,0 +1,8 @@
+<p>hola perri!</p>
+<p>mi contador: {{contador}}</p>
+@if (contador !== 0) {
+
+<button (click)="aumentar(-1)">decrementar</button>
+}
+<button (click)="aumentar(+1)">aumentar</button>
+<button (click)="reset()">reset</button>

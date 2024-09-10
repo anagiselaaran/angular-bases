@@ -1,0 +1,21 @@
+<h3>Lista de heroes</h3>
+
+<ul class="list-group mt-2">
+    @for (item of heroNames; track $index) {
+    <li class="list-group-item"><strong>{{ item }}</strong></li>
+    }
+    
+</ul>
+<button class="btn btn-outline-danger" (click)="removeLastHero()">borrar heroe</button>
+
+<h3>heroes eliminados</h3>
+   @if (heroesborrados) {
+       <p class="list-group-item"><strong>{{ heroesborrados}}</strong></p>
+   }
+  
+  
+
+
+    
+
+
