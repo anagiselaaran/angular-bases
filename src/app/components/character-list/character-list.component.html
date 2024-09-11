@@ -1,0 +1,13 @@
+<p>character-lit works!</p>
+<h4>listado</h4>
+<ul class="list-group">
+    @for (car of characterList ; track car.id) {
+
+        <li class="list-group-item d-flex justify-content-between align-items-center ">
+            <div>
+                {{$index +1}} - {{car.name}} - Power: {{car.power}}
+            </div>
+            <button class="btn btn-danger" (click)="onDelete(car.id)">X</button></li>
+    }
+    
+</ul>
