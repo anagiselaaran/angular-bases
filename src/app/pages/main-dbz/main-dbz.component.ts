@@ -54,6 +54,8 @@ export class MainDbzComponent {
 
   } */
   
+  
+      personajes : Character[]=[]
       dbzService = inject(CharactersService)
   
   get characters(): Character[]{
@@ -62,10 +64,23 @@ export class MainDbzComponent {
 
   onDeleteCharacter(id: string): void{
     this.dbzService.deleteById(id)
+    localStorage.setItem('personajes', JSON.stringify(this.dbzService.characters))
   }
 
   nuevoCharacter(character: Character): void{
     this.dbzService.onNewCharacter(character)
+   
+
+  }
+  ngOnInit() {
+    this.personajes = JSON.parse(localStorage.getItem("personajes") || '""')
+    console.log('new', this.personajes);
+    this.dbzService.characters = this.personajes
+   
+    
+   
+    
+
   }
 
 }
